@@ -1,0 +1,136 @@
+:root {
+  --paper: #f2e8d3;
+  --ink: #29241d;
+  --red: #963e31;
+  --blue: #263e69;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Arial, sans-serif;
+}
+* { box-sizing: border-box }
+body { margin: 0 }
+a { color: inherit; text-underline-offset: .23em }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px }
+.mast, footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px clamp(18px, 5vw, 72px); border-bottom: 1px solid #bdb098;
+}
+.mast a:first-child, footer a { font-family: Georgia, serif; font-weight: bold; font-size: 24px; text-decoration: none }
+.mast a:last-child { font-size: 14px }
+.opening, .sheet { max-width: 1100px; padding: 64px clamp(22px, 6vw, 90px); margin: auto }
+.opening { padding-top: clamp(38px, 8vw, 106px); padding-bottom: 18px }
+h1, h2 { font-family: Georgia, serif; letter-spacing: -.065em; line-height: .95; margin: 0 0 .34em }
+h1 { font-size: clamp(46px, 9vw, 128px) }
+h2 { font-size: clamp(40px, 6vw, 84px) }
+.opening p, .sheet > p, .guide-page p, .guide-page li { max-width: 62ch; line-height: 1.55 }
+.opening p { font-size: 20px }
+.opening a { display: inline-block; margin-top: 4px }
+.sequence { height: 218svh }
+.stage {
+  position: sticky; top: 0; height: 100svh; isolation: isolate;
+  overflow: clip; display: grid; place-items: center;
+  background: repeating-linear-gradient(0deg, #ad96701c 0 1px, transparent 1px 29px), var(--paper);
+}
+.clipping {
+  position: absolute; width: min(25vw, 238px, 39vh); margin: 0; padding: 7px;
+  background: #fff9ea; box-shadow: 3px 8px 16px #39281742;
+}
+.clipping img { display: block; width: 100%; height: auto }
+.center { z-index: 2; width: min(24vw, 218px, 32vh); transform: scale(var(--scale, 1.12)) rotate(-4deg) }
+.left, .right {
+  filter: blur(var(--blur, 12px)); opacity: var(--visibility, .32);
+  transform: translateX(var(--offset)) rotate(var(--turn));
+}
+.left { --offset: clamp(-330px, -29vw, -105px); --turn: -9deg }
+.right { --offset: clamp(105px, 29vw, 330px); --turn: 8deg }
+.film {
+  --hole: -2px;
+  z-index: 3; position: absolute; pointer-events: none;
+  width: min(67vw, 78vh, 710px); aspect-ratio: 1;
+  border-radius: 49% 51% 52% 48% / 48% 50% 50% 52%;
+  background:
+    radial-gradient(circle at 76% 24%, transparent var(--hole), #fff6dcaa calc(var(--hole) + 2px), transparent calc(var(--hole) + 6px)),
+    radial-gradient(ellipse at 30% 22%, #fff9 0 1%, transparent 21%),
+    radial-gradient(ellipse, transparent 46%, #c2dddc32 66%, #f0b9b8a1 87%, #fff8 98%),
+    conic-gradient(from 65deg, #dc8ca31c, #9ed6ec3b, #a7d99a23, #ffe7aa34, #dc8ca31c);
+  box-shadow: inset 2px 5px 14px #fff9, inset -3px -2px 19px #8d79a271, 0 0 13px #fff8;
+  mask-image: radial-gradient(circle at 76% 24%, transparent var(--hole), #000 calc(var(--hole) + 1px));
+  transform: scale(var(--scale, 1.12)) scaleX(var(--wobble, 1));
+  opacity: var(--film-opacity, 1);
+}
+.sheet { border-top: 1px solid #bdb098 }
+.note { font-size: .9rem; color: #655849 }
+.dialogue { max-width: 1280px; overflow: clip }
+.exchange { display: grid; grid-template-columns: 1fr 1.15fr; align-items: center; gap: clamp(12px, 4vw, 54px); max-width: 1020px; margin: auto }
+.mill.exchange { grid-template-columns: 1.15fr 1fr }
+.speech {
+  position: relative; padding: clamp(12px, 3vw, 34px); margin-block: 15px;
+  border: 2px solid currentColor; border-radius: 17px 25px 20px 12px;
+}
+.speech::after {
+  content: ""; position: absolute; top: 46%; width: 14px; height: 14px;
+  background: inherit; transform: rotate(45deg);
+}
+.plato { color: var(--red) }
+.mill { color: var(--blue) }
+.plato .speech { background: #f8e3d5; transform: rotate(-2deg) }
+.plato .speech::after { right: -8px; border-top: 2px solid; border-right: 2px solid }
+.mill .speech { background: #e1e6ed; transform: rotate(2deg) }
+.mill .speech::after { left: -8px; border-bottom: 2px solid; border-left: 2px solid }
+.speech h3 { margin: 0 }
+.speech p { font-family: Georgia, serif; font-size: clamp(16px, 3vw, 29px); line-height: 1.2 }
+.portrait { position: relative; max-width: 480px }
+.portrait img { width: 100%; display: block }
+.plato .portrait {
+  clip-path: polygon(6.7% 75%, 14% 69%, 29% 61%, 25% 54%, 24% 46%, 24% 32%, 21.9% 22%, 25% 16%, 32% 10%, 42% 7%, 50% 6%, 63% 8%, 72% 12%, 77% 20%, 78% 33%, 74% 42%, 71% 49%, 71% 56%, 82% 59%, 91% 64%, 95% 66%, 91% 73%, 85% 81%, 74% 89%, 57% 93%, 36% 94%, 25% 92%, 15% 88%, 8% 82%);
+}
+.mill .portrait {
+  clip-path: polygon(11% 80%, 16% 70%, 28% 65%, 35% 59%, 27% 55%, 23% 48%, 22% 37%, 18% 33%, 17% 27%, 19% 24%, 24% 22%, 26% 16%, 32% 12%, 43% 8%, 54% 7%, 63% 9%, 72% 15%, 77% 24%, 81% 27%, 81% 34%, 76% 40%, 72% 46%, 72% 51%, 77% 56%, 84% 61%, 93% 68%, 89% 74%, 84% 81%, 76% 88%, 65% 92%, 53% 94%, 36% 94%, 23% 90%, 15% 85%);
+}
+.reaction { position: absolute; inset: 0; opacity: 0 }
+.dialogue.responding .reaction { opacity: 1 }
+.animated-dialogue .plato { --entrance: 25% }
+.animated-dialogue .mill { --entrance: -25% }
+.animated-dialogue .exchange:not(.arrived) :is(.portrait, .speech) { opacity: 0 }
+.animated-dialogue .arrived .portrait { animation: portrait-glide 1.35s cubic-bezier(.2,.65,.25,1) both }
+.animated-dialogue .arrived .speech { animation: write-reply .82s ease-out .53s both }
+.animated-dialogue .reaction { transition: opacity .6s ease-in-out }
+.animated-dialogue .mill .reaction { transition-delay: .42s }
+@keyframes portrait-glide {
+  from { opacity: 0; translate: var(--entrance) 12px }
+  to { opacity: 1; translate: 0 0 }
+}
+@keyframes write-reply {
+  from { opacity: 0; clip-path: inset(0 0 100% 0) }
+  to { opacity: 1; clip-path: inset(-12px) }
+}
+.tickets, .evidence { display: flex; flex-wrap: wrap; gap: 15px }
+.tickets article { padding: 19px 21px; background: #fff8e8; border: 1px dashed #76664f }
+.tickets a { font-weight: 700 }
+.qr { display: block; margin: 12px auto 0; width: fit-content; background: white }
+.qr img { display: block }
+#argument { padding-block: 12px }
+#argument a { display: inline-block; margin: 0 14px 10px 0 }
+button { background: var(--ink); color: #fff9e8; border: 0; padding: 12px 17px; font: inherit; cursor: pointer }
+.guide-page { max-width: 920px }
+.guide-page h1 { font-size: clamp(46px, 8vw, 98px) }
+.evidence { margin: 25px 0 }
+.evidence img { width: min(29%, 200px); height: auto; align-self: flex-start; border: 5px solid #fff9e8 }
+.guide-shot { display: block; max-width: 540px; margin: 12px 0 24px }
+.guide-shot img { width: 100%; height: auto; display: block; border: 5px solid #fff9e8 }
+@media (max-width: 540px) {
+  .clipping { width: min(38vw, 34vh); padding: 4px }
+  .center { width: min(30vw, 25vh) }
+  .film { width: min(77vw, 60vh) }
+  .opening, .sheet { padding-block: 42px }
+  .speech small { font-size: 10px }
+  .dialogue .exchange { gap: 9px; margin-inline: -9px }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sequence { height: auto }
+  .stage { position: static; height: min(70svh, 620px) }
+  .film { display: none }
+  .clipping { filter: none; opacity: 1; --scale: .95 }
+  .animated-dialogue .exchange :is(.portrait, .speech) { animation: none !important; opacity: 1 !important }
+  .animated-dialogue .reaction { transition: none }
+}

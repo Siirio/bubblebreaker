@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BubbleBreaker — что осталось за кадром?</title>
+<link rel="stylesheet" href="scrapbook.css">
+<script defer src="story.js"></script>
+</head>
+<body>
+<header class="mast"><a href="./">BubbleBreaker</a><a href="#audit">Проверить ленту ↗</a></header>
+<main>
+<section class="opening">
+  <h1>ИИ заменит<br>программистов?</h1>
+  <p>Посмотрим, что выдаёт TikTok.</p>
+  <a href="#bubble">Прокрути, чтобы увидеть больше ↓</a>
+</section>
+<section id="bubble" class="sequence" aria-label="Раскрытие информационного пузыря">
+  <div class="stage">
+    <figure class="clipping center"><img src="assets/feed-three.png" alt="Выдача TikTok с роликом о конце эры программистов"></figure>
+    <figure class="clipping left"><img src="assets/feed-one.png" alt="Другая выдача TikTok: ролик о замене программистов находится на втором месте"></figure>
+    <figure class="clipping right"><img src="assets/feed-two.png" alt="Выдача TikTok с роликами о сокращении и появлении рабочих мест"></figure>
+    <div class="film" aria-hidden="true"></div>
+  </div>
+</section>
+<section class="sheet" id="observations">
+  <h2>Что осталось<br>за кадром?</h2>
+  <p>В присланных выдачах часть роликов повторяется, но порядок меняется. Рядом с прогнозами о сокращениях встречается ролик о направлениях IT, где ИИ создаёт работу.</p>
+  <p class="note">Это примеры выдачи. Формулировки запроса различались, а в одном случае TikTok предложил автозамену. По этим снимкам нельзя установить причину различий.</p>
+</section>
+<section class="sheet dialogue" aria-labelledby="philosophy">
+  <h2 id="philosophy">Платон и Милль</h2>
+  <p class="note">Воображаемый диалог по мотивам их работ.</p>
+  <article class="plato exchange">
+    <div class="speech"><h3>Платон</h3><p>Если перед тобой только тени, легко принять их за весь мир.</p><small>«Государство», книга VII</small></div>
+    <div class="portrait"><img src="assets/plato.png" alt="Портрет Платона"><img class="reaction" src="assets/plato-listens.png" alt=""></div>
+  </article>
+  <article class="mill exchange">
+    <div class="portrait"><img src="assets/mill.png" alt="Портрет Джона Стюарта Милля"><img class="reaction" src="assets/mill-glances.png" alt=""></div>
+    <div class="speech"><h3>Джон Стюарт Милль</h3><p>А если хочешь проверить своё мнение, попробуй ответить на самое сильное возражение.</p><small>«О свободе», глава II</small></div>
+  </article>
+</section>
+<section class="sheet" id="audit">
+  <h2>Проверь свою ленту</h2>
+  <p>Выбери платформу. Сброс рекомендаций добровольный.</p>
+  <div class="tickets">
+    <article><a href="tiktok.html">TikTok ↗</a><a class="qr" href="tiktok.html"><img src="assets/qr-tiktok.svg" width="136" height="136" alt="QR-код инструкции TikTok"></a></article>
+    <article><a href="instagram.html">Instagram ↗</a><a class="qr" href="instagram.html"><img src="assets/qr-instagram.svg" width="136" height="136" alt="QR-код инструкции Instagram"></a></article>
+    <article><a href="youtube.html">YouTube ↗</a><a class="qr" href="youtube.html"><img src="assets/qr-youtube.svg" width="136" height="136" alt="QR-код инструкции YouTube"></a></article>
+  </div>
+</section>
+<section class="sheet" id="roulette">
+  <h2>Сильный аргумент<br>с другой стороны</h2>
+  <p>Сравни доводы и проверь, на каких данных они основаны.</p>
+  <div id="argument" aria-live="polite"></div>
+  <button id="draw" type="button">Другая тема ↻</button>
+</section>
+</main>
+<footer><a href="./">BubbleBreaker ↑</a></footer>
+</body>
+</html>
